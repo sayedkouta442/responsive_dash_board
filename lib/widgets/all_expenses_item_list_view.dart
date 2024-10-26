@@ -78,33 +78,33 @@ class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
         ),
       ],
     );
-    return Row(
-      children: items.asMap().entries.map((e) {
-        int index = e.key;
-        var item = e.value;
+    // return Row(
+    //   children: items.asMap().entries.map((e) {
+    //     int index = e.key;
+    //     var item = e.value;
 
-        return Expanded(
-          child: GestureDetector(
-            onTap: () {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
-              child: AllExpensessItem(
-                allExpensessItemModel: item,
-                isSelected: selectedIndex == index,
-              ),
-            ),
-          ),
-        );
-      }).toList(),
+    //     return Expanded(
+    //       child: GestureDetector(
+    //         onTap: () {
+    //           setState(() {
+    //             selectedIndex = index;
+    //           });
+    //         },
+    //         child: Padding(
+    //           padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+    //           child: AllExpensessItem(
+    //             allExpensessItemModel: item,
+    //             isSelected: selectedIndex == index,
+    //           ),
+    //         ),
+    //       ),
+    //     );
+    //   }).toList(),
 
-      // children: items
-      //     .map((e) =>
-      //         Expanded(child: AllExpensessItem(allExpensessItemModel: e)))
-      //     .toList(),
-    );
+    //   // children: items
+    //   //     .map((e) =>
+    //   //         Expanded(child: AllExpensessItem(allExpensessItemModel: e)))
+    //   //     .toList(),
+    // );
   }
 }
