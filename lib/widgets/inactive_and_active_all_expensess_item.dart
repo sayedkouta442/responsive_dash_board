@@ -17,7 +17,10 @@ class InActiveAllExpensessItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
-        side: const BorderSide(width: 1, color: Color(0XFFF1F1F1)),
+        side: const BorderSide(
+          width: 1,
+          color: Color(0XFFF1F1F1),
+        ),
         borderRadius: BorderRadius.circular(12),
       )),
       child: Column(
@@ -27,11 +30,23 @@ class InActiveAllExpensessItem extends StatelessWidget {
             image: allExpensessItemModel.image,
           ),
           const SizedBox(height: 34),
-          Text(allExpensessItemModel.title, style: AppStyles.styleSemiBold16),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensessItemModel.title,
+                style: AppStyles.styleSemiBold16(context)),
+          ),
           const SizedBox(height: 8),
-          Text(allExpensessItemModel.date, style: AppStyles.styleRegular14),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensessItemModel.date,
+                style: AppStyles.styleRegular14(context)),
+          ),
           const SizedBox(height: 16),
-          Text(allExpensessItemModel.price, style: AppStyles.styleSemiBold24),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensessItemModel.price,
+                style: AppStyles.styleSemiBold24(context)),
+          ),
         ],
       ),
     );
@@ -51,10 +66,15 @@ class ActiveAllExpensessItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
-          color: const Color(0XFF4EB7F2),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          )),
+        color: const Color(0XFF4EB7F2),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+          side: const BorderSide(
+            width: 1,
+            color: Color(0XFF4EB7F2),
+          ),
+        ),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -64,18 +84,29 @@ class ActiveAllExpensessItem extends StatelessWidget {
             image: allExpensessItemModel.image,
           ),
           const SizedBox(height: 34),
-          Text(
-            allExpensessItemModel.title,
-            style: AppStyles.styleSemiBold16.copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpensessItemModel.title,
+              style: AppStyles.styleSemiBold16(context)
+                  .copyWith(color: Colors.white),
+            ),
           ),
           const SizedBox(height: 8),
-          Text(allExpensessItemModel.date,
-              style: AppStyles.styleRegular14
-                  .copyWith(color: const Color(0xFFFAFAFA))),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensessItemModel.date,
+                style: AppStyles.styleRegular14(context)
+                    .copyWith(color: const Color(0xFFFAFAFA))),
+          ),
           const SizedBox(height: 16),
-          Text(
-            allExpensessItemModel.price,
-            style: AppStyles.styleSemiBold24.copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpensessItemModel.price,
+              style: AppStyles.styleSemiBold24(context)
+                  .copyWith(color: Colors.white),
+            ),
           ),
         ],
       ),

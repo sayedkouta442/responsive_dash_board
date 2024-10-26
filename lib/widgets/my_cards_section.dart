@@ -31,7 +31,7 @@ class _MyCardsSectionState extends State<MyCardsSection> {
         SizedBox(
             width: 420,
             child: Text('My card',
-                style: AppStyles.styleSemiBold20
+                style: AppStyles.styleSemiBold20(context)
                     .copyWith(color: const Color(0xFF064061)))),
         const SizedBox(height: 20),
         MyCardsPageView(pageController: pageController), //

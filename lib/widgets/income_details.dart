@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/models/item_details_model.dart';
 
@@ -5,6 +7,7 @@ import 'package:responsive_dash_board/widgets/item_details.dart';
 
 class IncomeDetails extends StatelessWidget {
   const IncomeDetails({super.key});
+
   static const items = [
     ItemDetailsModel(
         color: Color(0xFF208CC8), title: 'Design service', value: '40%'),
@@ -16,11 +19,16 @@ class IncomeDetails extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: items.length,
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          return ItemDetails(itemDetailsModel: items[index]);
-        });
+    //log(MediaQuery.sizeOf(context).width.toString());
+
+    return Column(
+        children: items.map((e) => ItemDetails(itemDetailsModel: e)).toList());
+
+    // return ListView.builder(
+    //     itemCount: items.length,
+    //     shrinkWrap: true,
+    //     itemBuilder: (context, index) {
+    //       return ItemDetails(itemDetailsModel: items[index]);
+    //     });
   }
 }
